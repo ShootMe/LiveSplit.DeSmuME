@@ -3,7 +3,7 @@ using System;
 using System.Diagnostics;
 namespace LiveSplit.DeSmuME {
 	public partial class SplitterMemory {
-		private static ProgramPointer RAM = new ProgramPointer(AutoDeref.None, 0x3411250);
+		private static ProgramPointer RAM = new ProgramPointer(AutoDeref.None, 0);
 		public Process Program { get; set; }
 		public bool IsHooked { get; set; } = false;
 		private DateTime lastHooked;
@@ -29,6 +29,12 @@ namespace LiveSplit.DeSmuME {
 						Program = process;
 						break;
 					} else if (process.ProcessName.Equals("DeSmuME_0.9.11_x64", StringComparison.OrdinalIgnoreCase)) {
+						Program = process;
+						break;
+					} else if (process.ProcessName.Equals("DeSmuME_0.9.9_x86", StringComparison.OrdinalIgnoreCase)) {
+						Program = process;
+						break;
+					} else if (process.ProcessName.Equals("DeSmuME_0.9.9_x64", StringComparison.OrdinalIgnoreCase)) {
 						Program = process;
 						break;
 					}

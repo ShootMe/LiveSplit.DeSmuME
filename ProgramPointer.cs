@@ -99,7 +99,12 @@ namespace LiveSplit.DeSmuME {
 		}
 		private IntPtr GetVersionedFunctionPointer(Process program) {
 			if (MemoryReader.is64Bit) {
-				return program.MainModule.BaseAddress + offsets[0];
+				if (program.ProcessName.Equals("DeSmuME_0.9.9_x64", StringComparison.OrdinalIgnoreCase)) {
+					return program.MainModule.BaseAddress + 0x31DC4B0;
+				}
+				return program.MainModule.BaseAddress + 0x3411250;
+			} else if (program.ProcessName.Equals("DeSmuME_0.9.9_x86", StringComparison.OrdinalIgnoreCase)) {
+				return program.MainModule.BaseAddress + 0xEE3FE0;
 			}
 			return program.MainModule.BaseAddress + 0xEA0EB8;
 		}

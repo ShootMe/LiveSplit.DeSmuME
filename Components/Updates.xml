@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <updates>
+	<update version="1.0.1">
+		<files>
+			<file path="Components/LiveSplit.DeSmuME.dll" status="changed"/>
+		</files>
+		<changelog>
+			<change> Added ability to use 0.9.9 as well </change>
+		</changelog>
+	</update>
 	<update version="1.0.0">
 		<files>
 			<file path="Components/LiveSplit.DeSmuME.dll" status="changed"/>
